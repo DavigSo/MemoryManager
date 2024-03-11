@@ -3,6 +3,8 @@ package so;
 public class Execute {
 
 	public static void main(String[] args) {
+
+		System.out.println("Começando testes...");
 		Process p1 = SystemOperation.systemCall(SystemCallType.CREATE_PROCESS, null);
 		SystemOperation.systemCall(SystemCallType.WRITE_PROCESS, p1);
 		
@@ -33,5 +35,6 @@ public class Execute {
 		Process p10 = SystemOperation.systemCall(SystemCallType.CREATE_PROCESS, null);
 		SystemOperation.systemCall(SystemCallType.WRITE_PROCESS, p10);
 		
-	}
+	}
+
 }	
