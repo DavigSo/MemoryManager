@@ -23,8 +23,13 @@ public class Process {
 		
 		this.id = UUID.randomUUID().toString();
 		Random rand = new Random();
+<<<<<<< HEAD
 //		List<Integer> numbers = Arrays.asList(2, 4, 10, 20, 30, 50, 100);
 //		this.sizeInMemory = numbers.get(rand.nextInt(numbers.size()));
+=======
+		List<Integer> numbers = Arrays.asList(2, 4, 0, 10, 20, 30, 50, 100);
+		this.sizeInMemory = numbers.get(rand.nextInt(numbers.size()));
+>>>>>>> 87f7cc76362f2592b6e43b7bb200f2d0fc18a279
 	}
 
 	public String getId() {
