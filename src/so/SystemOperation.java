@@ -14,41 +14,31 @@ public class SystemOperation {
     public static Process systemCall(SystemCallType type, Process p) {
         if (type.equals(SystemCallType.CREATE_PROCESS)) {
             if (mm == null) {
-<<<<<<< HEAD
+                // Inicializa o MemoryManager com a estratégia WORST_FIT por padrão
                 mm = new MemoryManager(Strategy.WORST_FIT);
-=======
-                mm = new MemoryManager(Strategy.BEST_FIT);
->>>>>>> 87f7cc76362f2592b6e43b7bb200f2d0fc18a279
             }
             if (cm == null) {
                 cm = new CpuManager();
             }
+            // Cria um novo processo
             return new Process();
         } else if (type.equals(SystemCallType.WRITE_PROCESS)) {
-<<<<<<< HEAD
             if (mm == null) {
+                // Se o MemoryManager não foi inicializado anteriormente, inicializa-o com a estratégia WORST_FIT
                 mm = new MemoryManager(Strategy.WORST_FIT);
             }
-            mm.write(p);
-            return p;
-        } else if (type.equals(SystemCallType.CLOSE_PROCESS)) {
-            if (mm == null) {
-                mm = new MemoryManager(Strategy.WORST_FIT);
-            }
-            mm.delete(p);
-            return p;
-        }
-        return null;
-    }
-
-=======
+            // Escreve o processo na memória
             mm.write(p);
             return p; // Retorna o próprio processo que foi passado como argumento
         } else if (type.equals(SystemCallType.CLOSE_PROCESS)) {
+            if (mm == null) {
+                // Se o MemoryManager não foi inicializado anteriormente, inicializa-o com a estratégia WORST_FIT
+                mm = new MemoryManager(Strategy.WORST_FIT);
+            }
+            // Remove o processo da memória
             mm.delete(p);
             return p; // Retorna o próprio processo que foi passado como argumento
         }
         return null;
     }
->>>>>>> 87f7cc76362f2592b6e43b7bb200f2d0fc18a279
 }
